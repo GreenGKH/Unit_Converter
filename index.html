@@ -6,17 +6,15 @@
 
 <body>
     <article id="card">
-        <section class="card-content">
-            <section class="top">
-                <h1 class="title">Title</h1>
-                <input type="text">
-                <button>CONVERT</button>
-            </section>
-            <section class="bottom">
-                <div class="length"></div>
-                <div class="volume"></div>
-                <div class="mass"></div>
-            </section>
+        <section class="top">
+            <h1 id="title">Metric/Imperial Unit Conversion</h1>
+            <input id="input-el" type="text">
+            <button id="button-el">CONVERT</button>
+        </section>
+        <section class="bottom">
+            <div id="length-box" class="boxes length"><h2>Length (Meter/Feet)</h2></div>
+            <div id="volume-box" class="boxes volume"><h2>Volume (Liters/Gallons)</h2></div>
+            <div id="mass-box" class="boxes mass"><h2>Mass (Kilograms/Pounds)</h2></div>
         </section>
     </article>
     <script src="index.js"></script>

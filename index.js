@@ -4,45 +4,38 @@
 1 kilogram = 2.204 pound
 */
 
-const lenghtEl = document.getElementById("length-box")
-const volumeEl = document.getElementById("volume-box")
-const massEl = document.getElementById("mass-box")
+const feetConversionEl = document.getElementById("feet-conversion")
+const meterConversionEl = document.getElementById("meter-conversion")
+
+const gallonConversionEl = document.getElementById("gallon-conversion")
+const literConversionEl = document.getElementById("liter-conversion")
+
+const kilogramConversionEl = document.getElementById("kilogram-conversion")
+const poundConversionEl = document.getElementById("pound-conversion")
+
 const inputEl = document.getElementById("input-el")
+const inputField = document.querySelectorAll("#input-field")
 const buttonEl = document.getElementById("button-el")
 
-// Initial state
-let inputVal = 0
+const ratioMeterFeet = 3.281
+const ratioLiterGallon = 0.264
+const ratioKilogramPound = 2.204
 
-// Functions
 buttonEl.addEventListener("click", function () {
-    inputVal = inputEl.value
-    render()
+    const input = Number(inputEl.value)
+
+    for (let i = 0; i < inputField.length; i++) {
+        inputField[i].textContent = input
+    }
+
+    feetConversionEl.textContent = (input * ratioMeterFeet).toFixed(3)
+    meterConversionEl.textContent = (input / ratioMeterFeet).toFixed(3)
+
+    literConversionEl.textContent = (input * ratioLiterGallon).toFixed(3)
+    gallonConversionEl.textContent = (input / ratioLiterGallon).toFixed(3)
+
+    kilogramConversionEl.textContent = (input * ratioKilogramPound).toFixed(3)
+    poundConversionEl.textContent = (input / ratioKilogramPound).toFixed(3)
+
+    inputEl.value = ""
 })
-
-// Meter | feet
-function convertMtoF(inputVal) {
-    return inputVal * 3.281
-}
-function convertFtoM(inputVal) {
-    return inputVal / 3.281
-}
-
-//Liter | gallon
-function convertLtoG(inputVal) {
-    return inputVal * 0.264
-}
-function convertGtoL(inputVal) {
-    return inputVal / 0.264
-}
-
-// Kilogram | pound
-function convertKtoP(inputVal) {
-    return inputVal * 2.204
-}
-function convertPtoK(inputVal) {
-    return inputVal / 2.204
-}
-
-// Rendering
-function render() {
-}

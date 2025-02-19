@@ -50,7 +50,7 @@ input {
     border: 2px solid #b295ff;
     border-radius: 10px;
     text-align: center;
-    font-size: 40px;
+    font-size: 38px;
     color: #FFFFFF;
     font-weight: 850;
     margin: 0;
@@ -66,8 +66,19 @@ button {
 }
 
 .boxes {
-    height: 100px;
-    width: 390px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 130px;
+    width: 450px;
     background-color: #ffffff;
     text-align: center
 ;}
+
+
+/* Removing input field arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
